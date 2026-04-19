@@ -9,7 +9,14 @@ module.exports = defineConfig({       // 👈 module.exports, NOT export default
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [
+    ['line'],                                    
+    ['html'],                                    
+    ['allure-playwright', { 
+      outputFolder: 'allure-results',            
+      suiteTitle: false 
+    }]
+  ],
   globalSetup: require.resolve('./global-setup'),
 
   use: {
