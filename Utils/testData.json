@@ -1,0 +1,18 @@
+{
+    "createEvent" : {
+        "title": "Playwright Conference 2026",
+        "description": "Join us for an exciting conference on Playwright testing!",
+        "category": "Conference",
+        "city": "Los Angeles",
+        "venue": "LA Convention Center",
+        "dateTime": "2028-12-01T09:00",
+        "price": "50",
+        "totalSeats" : "250",
+        "imageUrl": "https://s3.eu-central-1.amazonaws.com/test-architect.dev/wp-content/uploads/2023/03/31142737/Screenshot-2023-03-31-at-15.27.07.png"
+    },
+    "bookEvent" : {
+        "fullName" : "John Doe",
+        "email" : "john.doe@example.com",
+        "phone" : "1234567890"
+    }
+}
