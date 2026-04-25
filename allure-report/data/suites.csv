@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4278","Book an Event","bookEvent","2026-04-25","passed","2026-04-25","","","",""
+"","2536","Valid login — session is active","login","2026-04-25","passed","2026-04-25","","","",""
+"","3778","Create Event","createEvent","2026-04-25","passed","2026-04-25","","","",""

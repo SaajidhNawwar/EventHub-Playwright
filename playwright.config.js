@@ -25,6 +25,8 @@ module.exports = defineConfig({       // 👈 module.exports, NOT export default
     headless: false,
     viewport: { width: 1520, height: 1080 },
     storageState: path.join(__dirname, 'storageState.json'),  // 👈 absolute path
+    trace: 'on',
+    screenshot: 'only-on-failure'
   },
 
   projects: [
