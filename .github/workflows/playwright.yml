@@ -29,17 +29,6 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Test Azure connectivity
-      run: |
-        curl -v "https://eastus.api.playwright.microsoft.com" || true
-        az account show
-        az resource show --ids "/subscriptions/4ab00bb6-3ed4-4e41-9125-09fb82e1f6a7/resourceGroups/RRD/providers/microsoft.loadtestservice/playwrightworkspaces/saajidh-playwright" || true
-
-    - name: Test Microsoft login connectivity
-      run: |
-        curl -v "https://login.microsoftonline.com" || true
-        curl -v "https://login.microsoftonline.com/${{ secrets.AZURE_TENANT_ID }}/oauth2/v2.0/token" || true
-
     - name: Run Playwright tests
       env:
         CI: true
@@ -50,8 +39,14 @@ jobs:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-        DEBUG: azure:playwright*,pw:browser*,pw:api*,azure*
       run: npx playwright test --config=playwright.service.config.js --workers=1
+
+    - name: Check report folder
+      if: ${{ !cancelled() }}
+      run: |
+        echo "Checking for playwright-report folder..."
+        ls -la
+        ls -la playwright-report/ || echo "playwright-report folder not found!"
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
