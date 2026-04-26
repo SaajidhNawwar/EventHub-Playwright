@@ -1,7 +1,7 @@
 // @ts-check
 const { defineConfig } = require('@playwright/test');
 const path = require('path');         // 👈 add this
-// ✅ Only load dotenv if .env file exists (local only)
+// Only load dotenv if .env file exists (local only)
 const fs = require('fs');
 if (fs.existsSync('.env')) {
   require('dotenv').config();

@@ -15,8 +15,8 @@
     "allure-playwright": "^3.7.1"
   },
   "dependencies": {
-    "dotenv": "^17.4.2",
     "@azure/identity": "^4.13.1",
-    "@azure/playwright": "^1.1.5"
+    "@azure/playwright": "^1.0.0",
+    "dotenv": "^17.4.2"
   }
 }
