@@ -15,7 +15,7 @@ try {
     process.env.AZURE_CLIENT_ID,
     process.env.AZURE_CLIENT_SECRET,
   );
-  // Test the credential immediately
+  // Test the credential immediately!!!
   credential.getToken('https://management.azure.com/.default')
     .then(token => console.log('✅ Credential token obtained successfully'))
     .catch(err => console.error('❌ Credential token failed:', err.message));
