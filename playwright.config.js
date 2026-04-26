@@ -7,7 +7,7 @@ if (fs.existsSync('.env')) {
   require('dotenv').config();
 }
 
-module.exports = defineConfig({       // 👈 module.exports, NOT export default
+module.exports = defineConfig({       
   testDir: './tests',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
