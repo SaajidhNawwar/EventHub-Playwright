@@ -13,7 +13,7 @@ module.exports = async function globalSetup() {
   const browser = await chromium.launch({ 
     channel: 'chrome',
     headless: !!process.env.CI,
-    slowMo: 500
+    slowMo: process.env.CI ? 0 : 500
   });
 
   try {
