@@ -33,8 +33,7 @@ module.exports = defineConfig(
   }),
   {
     reporter: [
-      ["html", { open: "never" }],
-      ["@azure/playwright"],  // 👈 without /reporter
+      ["html", { open: "never" }]
     ],
   }
 );
