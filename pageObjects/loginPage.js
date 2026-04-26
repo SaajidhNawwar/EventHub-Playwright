@@ -8,7 +8,7 @@ class LoginPage {
     }
 
     async navigateTo(){
-        // 👇 Always go to /login explicitly
+        // 👇 Always go to /login explicitly. Just added comment
         await this.page.goto(process.env.BASE_URL + '/login');
     }
 
