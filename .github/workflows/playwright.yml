@@ -35,6 +35,11 @@ jobs:
         az account show
         az resource show --ids "/subscriptions/4ab00bb6-3ed4-4e41-9125-09fb82e1f6a7/resourceGroups/RRD/providers/microsoft.loadtestservice/playwrightworkspaces/saajidh-playwright" || true
 
+    - name: Test Microsoft login connectivity
+      run: |
+        curl -v "https://login.microsoftonline.com" || true
+        curl -v "https://login.microsoftonline.com/${{ secrets.AZURE_TENANT_ID }}/oauth2/v2.0/token" || true
+
     - name: Run Playwright tests
       env:
         CI: true
