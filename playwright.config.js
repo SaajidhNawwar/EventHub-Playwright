@@ -22,7 +22,7 @@ module.exports = defineConfig({       // 👈 module.exports, NOT export default
   use: {
     baseURL: process.env.BASE_URL,    // 👈 add this
     channel: 'chrome',
-    headless: false,
+    headless: !!process.env.CI,
     viewport: { width: 1520, height: 1080 },
     storageState: path.join(__dirname, 'storageState.json'),  // 👈 absolute path
     trace: 'on',
