@@ -1,7 +1,11 @@
 // @ts-check
 const { defineConfig } = require('@playwright/test');
 const path = require('path');         // 👈 add this
-require('dotenv').config();
+// ✅ Only load dotenv if .env file exists (local only)
+const fs = require('fs');
+if (fs.existsSync('.env')) {
+  require('dotenv').config();
+}
 
 module.exports = defineConfig({       // 👈 module.exports, NOT export default
   testDir: './tests',

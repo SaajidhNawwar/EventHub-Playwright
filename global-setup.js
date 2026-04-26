@@ -1,8 +1,11 @@
 const { chromium } = require('@playwright/test');
 const { LoginPage } = require('./pageObjects/LoginPage');
 const path = require('path');
+// ✅ Only load dotenv if .env file exists (local only)
 const fs = require('fs');
-require('dotenv').config();
+if (fs.existsSync('.env')) {
+  require('dotenv').config();
+}
 
 module.exports = async function globalSetup() {
   console.log('🚀 Global setup starting...');
